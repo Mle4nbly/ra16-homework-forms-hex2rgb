@@ -3,7 +3,7 @@ import { useState } from "react";
 export const Converter = () => {
   const [hexValue, setHexValue] = useState("#");
   const [rgbValue, setRgbValue] = useState("rgb(255, 255, 255)");
-  const [isValid, setValidity] = useState(true)
+  const [isValid, setValidity] = useState(true);
 
   const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -27,7 +27,7 @@ export const Converter = () => {
         setRgbValue(`rgb(${r}, ${g}, ${b})`);
         setValidity(true);
       } else {
-        setRgbValue('Ошибка!');
+        setRgbValue("Ошибка!");
         setValidity(false);
       }
     }
@@ -40,7 +40,12 @@ export const Converter = () => {
         backgroundColor: isValid ? rgbValue : "#e94b35",
       }}
     >
-      <input className="input_field" value={hexValue} type="text" onChange={changeHandler} />
+      <input
+        className="input_field"
+        value={hexValue}
+        type="text"
+        onChange={changeHandler}
+      />
       <div className="rgb_field">{rgbValue ? rgbValue : "Ошибка!"}</div>
     </form>
   );
