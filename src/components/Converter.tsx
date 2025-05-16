@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const Converter = () => {
-  const [hexValue, setHexValue] = useState("#");
+  const [hexValue, setHexValue] = useState("");
   const [rgbValue, setRgbValue] = useState("rgb(255, 255, 255)");
   const [isValid, setValidity] = useState(true);
 
@@ -45,6 +45,7 @@ export const Converter = () => {
         value={hexValue}
         type="text"
         onChange={changeHandler}
+        placeholder="Введите hex"
       />
       <div className="rgb_field">{rgbValue ? rgbValue : "Ошибка!"}</div>
     </form>
